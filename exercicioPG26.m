@@ -13,12 +13,11 @@ t_inicial = 0;
 y_inicial = 1;
 t_objetivo = 1;
 
-
 for h = hs
     tk = t_inicial:h:t_objetivo;
     N = size(tk)(2);
 
-    yk = [[y_inicial] zeros(1,N-1)];
+    yk = [y_inicial];
 
     for i = 2:N
         yk(i) = euler(@f, tk(i-1), yk(i-1), h);
@@ -28,5 +27,7 @@ for h = hs
     %fprintf('Program paused. Press enter to continue.\n');
     fprintf('Result (h = %f) => y(%f) = %f \n', h, t_objetivo, yk(N));
     %pause;
+    YK = euler_h(@f, y_inicial, t_inicial, t_objetivo, h);
+    YK(size(YK)(2));
 end
 
