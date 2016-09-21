@@ -1,7 +1,7 @@
 run('metodos.m');
 % Avaliação do problema de valor inicial dado pelo sistema no ponto tk = 1:
-% y' = y
-% y(0) = 1
+%   | y' = y
+%   | y(0) = 1
 
 function x = f(t, y)
     x = y;

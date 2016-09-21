@@ -10,7 +10,7 @@ x_inicial = 0;
 y_inicial = 0;
 x_final = 0.6;
 
-xs = x_inicial:h:x_final;
+xk = x_inicial:h:x_final;
 
 function x = f1(x, y)
 	x = y^2 + 2*x - (x^4);
@@ -19,8 +19,8 @@ end
 yk = euler_h(@f1, y_inicial, x_inicial, x_final, h);
 
 fprintf('Tabela 2.1\n');
-for i = 2:size(xs)(2)
-	fprintf('%f, %f, %f\n', xs(i), yk(i), xs(i)^2);
+for i = 2:size(xk)(2)
+	fprintf('%f, %f, %f\n', xk(i), yk(i), xk(i)^2);
 end
 
 

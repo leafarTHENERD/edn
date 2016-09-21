@@ -1,6 +1,6 @@
 run('metodos.m');
 % 2.2.2 - Aplique o metodo de Euler para o PVI :
-%		  y' = -y 0 <= x <= 1
+%         y' = -y 0 <= x <= 1
 %         y(0) = 1
 hs = [.25 .125 .0625];
 
@@ -16,7 +16,7 @@ fg = figure;
 hold on;
 
 for h = hs
-	fprintf('Result (h = %f)\n', h); 
+    fprintf('Result (h = %f)\n', h); 
 
     tk = t_inicial:h:t_final;
     N = size(tk)(2);
@@ -26,7 +26,7 @@ for h = hs
     for i = 2:N
         yk(i) = euler(@f, tk(i-1), yk(i-1), h);
 
-        fprintf('\ty(%f) = %f \n', tk(i), yk(i));
+        fprintf('%f, %f, %f\n', tk(i), yk(i), e^(-tk(i)) - yk(i));
     end
 
     p1 = plot(tk, yk);
