@@ -39,5 +39,5 @@ xlabel('x');
 ylabel('y');
 title("Problema PVI por Heun: \n dy/dx = -y, 0<=x<=1 \n y(0) = 1");
 
-fprintf('Program paused. Press enter to exit.');
+fprintf('Program paused. Press enter to exit.\n');
 pause;
