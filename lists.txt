@@ -1,0 +1,32 @@
+--> List 1 [Ortega]
+
+    Pg 26 - Implementar {y'=y ; y(0) = 1}
+    Pg 37
+IMP Pg 37 - 2.2.9
+IMP Pg 37 - 2.2.11
+IMP Pg 54 - 2.4.2
+    Pg 54 - 2.4.6
+    Pg 64 - 2.5.12
+    Pg 65 - 2.5.13
+    Pg 79 - 3.1.2; 3.1.3; 3.1.4; 3.1.8
+
+--> List 2 [Strikwerda]
+
+    Pg 18 - Exemp. 1.3.1
+    Pg 22 - Exerc. 1.3.1
+    Pg 36 - 1.6.1; 1.6.2; 1.6.3
+    Pg 57 - 2.2.1; 2.2.2; 2.2.3; 2.2.4
+    Pg 45 - 2.1.5; 2.1.6
+
+--> List 3 [Strikwerda]
+
+    Pg 92 - 3.5.1
+    Implementar Crank-Nicolson
+    Implementar Leapfrog
+            4.1.1; 4.1.2
+            4.2.1
+            6.3.1; 6.3.2; 6.3.3
+            6.4.1
+    Pg 159 - Implementar Exemp
+    Pg 332 - 12.5.1~12.5.7
+    Implementar Caso Bidimensional ~ Laplace Shit I guess 
