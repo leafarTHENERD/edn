@@ -20,13 +20,13 @@ IMP Pg 54 - 2.4.2
 
 --> List 3 [Strikwerda]
 
-    Pg 92 - 3.5.1
+IMP Pg 92 - 3.5.1
     Implementar Crank-Nicolson
     Implementar Leapfrog
-            4.1.1; 4.1.2
-            4.2.1
-            6.3.1; 6.3.2; 6.3.3
-            6.4.1
-    Pg 159 - Implementar Exemp
+    4.1.1; 4.1.2
+    4.2.1
+    6.3.1; 6.3.2; 6.3.3
+    6.4.1
+IMP Pg 159 - Implementar Exemp
     Pg 332 - 12.5.1~12.5.7
-    Implementar Caso Bidimensional ~ Laplace Shit I guess 
+IMP Implementar Caso Bidimensional ~ Laplace Shit I guess 

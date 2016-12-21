@@ -8,16 +8,17 @@ a           = 1;
 hs          = [1/10 1/20 1/40];
 lambda      = 1;
 
-function u = u_minus_1(t)
-    u = sin(pi*(-1 - t));
+function u1 = u_x_inicial(t)
+    u1 = sin(pi*(-1 - t));
 end
 
-function u = u_inicial(x)
-    u = sin(pi * x);
+function u0 = u_inicial(x)
+    u0 = sin(pi * x);
 end
 
 
-v = crank_nicolson_lower_bound(@u_inicial, @u_minus_1, x_inicial, x_final, t_final, a, lambda, h);
+h = hs(3);
+v = crank_nicolson_lower_bound(@u_inicial, @u_x_inicial, x_inicial, x_final, t_final, a, lambda, h);
 
 x_m = x_inicial:h:x_final;
 t_n = 0:(lambda*h):t_final;

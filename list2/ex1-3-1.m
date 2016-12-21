@@ -13,7 +13,7 @@ function u = u_inicial(x)
         u = (cos(pi * x))^2;
     else
         u = 0;
-    endif
+    end
 end
 
 
