@@ -31,7 +31,7 @@ function v = ftbs(u_inicial, x_inicial, x_final, t_final, a, lambda, h)
     for t = k:k:t_final
         t_new = t_now + 1;
         for m = M_inicial:M_final-1
-            v(t_new, m) = (1 - a*lamba) * v(t_now, m) - (a*lambda) * (-v(t_now, m-1));
+            v(t_new, m) = (1 - a*lambda) * v(t_now, m) - (a*lambda) * (-v(t_now, m-1));
         end
         M_inicial = M_inicial + 1;
         v(t_new, M_final) = v(t_new, M_final-1);

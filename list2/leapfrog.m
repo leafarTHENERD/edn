@@ -33,12 +33,14 @@ function v = leapfrog(u_inicial, x_inicial, x_final, t_final, a, lambda, h)
     for m = M_inicial:M_final-1
         v(t_new, m) = v(t_now, m) - (1/2)*(a * lambda) * (v(t_now, m+1) - v(t_now, m-1));
     end
-    M_inicial = M_inicial + 1;
+    v(t_new, M_final) = v(t_new, M_final-1);
+    t_now = t_new;
+    %M_inicial = M_inicial + 1;
 
-    for t = k:k:t_final
+    for t = k:k:t_final-k
         t_new = t_now + 1;
         for m = M_inicial:M_final-1
-            v(t_new, m) = v(t_now - 1) - (a * lambda)*( v(t_now, m+1) - v(t_now, m-1));
+            v(t_new, m) = v(t_now - 1, m) - (a * lambda)*(v(t_now, m+1) - v(t_now, m-1));
         end
         M_inicial = M_inicial + 1;
         v(t_new, M_final) = v(t_new, M_final-1);

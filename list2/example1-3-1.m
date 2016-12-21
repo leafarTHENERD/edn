@@ -1,4 +1,4 @@
-% Exemplo 1.3.1 - PVC := u_t + u_x = 0 em -2 <= x <= 3, 0 <= t
+% Exemplo 1.3.1 - PVI := u_t + u_x = 0 em -2 <= x <= 3, 0 <= t
 %                        u_0 (x) = | 1 - |x|, se |x| <= 1
 %                                  | 0        se |X| >= 1
 
