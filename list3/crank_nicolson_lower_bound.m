@@ -42,25 +42,33 @@ function v = crank_nicolson_lower_bound(u_inicial, u_x_inicial, x_inicial, x_fin
 
     alph = (a*lambda)/4;
     tridiagonal_N = M_final-2; % sem condições de contorno
+    %tridiagonal_N = M_final-1; % sem condições de contorno
 
     aa = -alph*ones(1, tridiagonal_N - 1);
     bb = ones(1, tridiagonal_N);
     cc = alph*ones(1, tridiagonal_N - 1);
     dd = zeros(1, tridiagonal_N);
 
+    % condições numericas de contorno
+    %aa(tridiagonal_N-1) = -lambda;
+    %bb(tridiagonal_N) = (1 + lambda);
+
     N_inicial = N_inicial + 1;
     for n = N_inicial:N_final 
-        for i=1:tridiagonal_N
+        for i=1:tridiagonal_N-1
             m = i+1;
-            dd(i) = v(n-1, m) + alph*(v(n-1, m+1) - v(n-1, m-1));
+            dd(i) = v(n-1, m) + alph*(v(n-1, m+1) + v(n-1, m-1));
             if i == 1
                 dd(i) = dd(i) + alph*v(n, 1);
-            else if i == tridiagonal_N
+            elseif i == tridiagonal_N-1
                 dd(i) = dd(i) - alph*v(n, M_final);
             end
         end
+        %dd(tridiagonal_N) = v(n, M_final);
+
         xx = thomas(aa, bb, cc, dd, tridiagonal_N);
         v(n, M_final) = v(n-1, M_final-1);
         v(n, :) = [v(n, 1) xx v(n, M_final)];
+        %v(n, :) = [v(n, 1) xx];
     end
 end

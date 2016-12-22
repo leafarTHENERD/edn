@@ -17,10 +17,13 @@
 %  
 
 function v = upwind(u_inicial, x_inicial, x_final, t_final, a, b, mu, h)
+
     k = mu * h * h;
     alph = (h*a)/(2*b);
     x_m = x_inicial:h:x_final;
     t_n = 0:k:t_final;
+
+    condition = 1 - 2*b*mu*(1 + alph)
 
     M_inicial = 2;
     M_final = size(x_m)(2);
@@ -34,9 +37,10 @@ function v = upwind(u_inicial, x_inicial, x_final, t_final, a, b, mu, h)
         v(1, m) = feval(@u_inicial, x_m(m));
     end
 
+    N_inicial = N_inicial + 1;
     for n = N_inicial:N_final
-        for m = 1:M_final
-            v(n, m) = (1 - 2*b*mu(1 + alph)) * v(n-1, m) + b*mu*v(n-1, m + 1) + b*mu*v(n-1, m-1);
+        for m = 2:M_final-1
+            v(n, m) = (1 - 2*b*mu*(1 + alph)) * v(n-1, m) + b*mu*v(n-1, m + 1) + b*mu*v(n-1, m-1);
         end
     end
 end
