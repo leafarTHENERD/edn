@@ -30,7 +30,7 @@ function v = upwind(u_inicial, x_inicial, x_final, t_final, a, b, mu, h)
     N_inicial = 1;
     N_final = size(t_n)(2);
     
-    v = zeros(N_final, M_final);
+    %v = zeros(N_final, M_final);
 
     % dados iniciais em t = 0
     for m = 1:M_final
@@ -40,7 +40,7 @@ function v = upwind(u_inicial, x_inicial, x_final, t_final, a, b, mu, h)
     N_inicial = N_inicial + 1;
     for n = N_inicial:N_final
         for m = 2:M_final-1
-            v(n, m) = (1 - 2*b*mu*(1 + alph)) * v(n-1, m) + b*mu*v(n-1, m + 1) + b*mu*v(n-1, m-1);
+            v(n, m) = (1 - 2*b*mu*(1 + alph)) * v(n-1, m) + b*mu*v(n-1, m + 1) + b*mu*(1 +2*alph)*v(n-1, m-1);
         end
     end
 end
