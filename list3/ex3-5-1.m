@@ -17,7 +17,8 @@ function u0 = u_inicial(x)
 end
 
 
-h = hs(3);
+%h = hs(3);
+h = 1/100;
 v = crank_nicolson_lower_bound(@u_inicial, @u_x_inicial, x_inicial, x_final, t_final, a, lambda, h);
 
 x_m = x_inicial:h:x_final;
